@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Disasters | Global Impact & Solutions</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <style>
+        /* Additional styles for disaster cards */
+        .disaster-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .disaster-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .disaster-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .disaster-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .disaster-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .disaster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        /* Modal content formatting */
+        .modal-body p {
+            white-space: pre-line;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Disaster Management and prevention </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#take-action">Take Action</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Natural Disasters</h1>
+            <p class="fade-in-delay">Understanding the global impact of natural disasters and finding solutions for a sustainable future.</p>
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <div class="arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact" class="impact">
+        <div class="section-content">
+            <h2 data-aos="fade-up">Global Impact</h2>
+            <div class="stat-grid">
+                <div class="stat-card" data-aos="fade-up">
+                    <h3>890 </h3>
+                    <p>of all natural disasters are climate-related</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>218 billoin </h3>
+                    <p> Billion people affected by disasters annually with approximately 68000 lives lost each year </p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>6T</h3>
+                    <p> Trillions economic losses from disasters since 1990</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="parallax-section">
+        <div class="parallax-content">
+            <h2>Nature shapes our world</h2>
+            <p>But climate change is intensifying natural disasters globally</p>
+        </div>
+    </section>
+
+    <section id="disasters" class="disasters">
+        <div class="section-content">
+            <h2 data-aos="fade-up">Major Natural Disasters and Their Causes </h2>
+            <div class="disaster-grid">
+                <div class="disaster-card" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1547683905-f686c993aae5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Flood">
+                    <h3>Floods</h3>
+                    <p>Rising water levels that submerge land and communities, often caused by excessive rainfall or storm surges. Floods are caused by heavy rainfall,raoid snowmelt or coastal areas.</p>
+                    <button class="learn-more-btn" onclick="openModal('floodModal')">Learn More</button>
+                </div>
+                <div class="disaster-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1596021876043-3ec2658c4477?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Drought">
+                    <h3>Droughts</h3>
+                    <p>Extended periods of water scarcity affecting agriculture, ecosystems, and human communities. It is a prolonged dry period in the natural climate cycle that can occur anywhere in the world. It is a slow-onset disaster characterized by the lack of precipitation, resulting in a water shortage.</p>
+                    <button class="learn-more-btn" onclick="openModal('droughtModal')">Learn More</button>
+                </div>
+                <div class="disaster-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1614678031696-2d07467a6ebf?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tsunami">
+                    <h3>Tsunamis</h3>
+                    <p>Massive ocean waves triggered by underwater disturbances, causing devastating coastal damage. It is a series of enormous ocean waves caused by earthquakes, underwater landslides, volcanic eruptions or asteroids.</p>
+                    <button class="learn-more-btn" onclick="openModal('tsunamiModal')">Learn More</button>
+                </div>
+                <div class="disaster-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1630163747715-61d7a6dfbf8a?q=80&w=1943&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Landslide">
+                    <h3>Landslides</h3>
+                    <p>Mass movement of earth materials down slopes, often triggered by heavy rainfall or earthquakes.They can happen suddenly or more slowly over long periods of time. When the force of gravity acting on a slope exceeds the resisting forces of a slope, the slope will fail and a landslide occurs.</p>
+                    <button class="learn-more-btn" onclick="openModal('landslideModal')">Learn More</button>
+                </div>
+                <div class="disaster-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1624929303592-230462f729be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Forest Fire">
+                    <h3>Forest Fires</h3>
+                    <p>Uncontrolled fires in forested areas, devastating ecosystems and threatening communities.A wildfire, forest fire, or a bushfire is an unplanned and uncontrolled fire in an area of combustible vegetation.Depending on the type of vegetation present, a wildfire may be more specifically identified as a bushfire (in Australia), desert fire, grass fire, hill fire, peat fire, prairie fire, vegetation fire, or veld fire.</p>
+                    <button class="learn-more-btn" onclick="openModal('fireModal')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions" class="solutions">
+        <div class="section-content">
+            <h2 data-aos="fade-up">Solutions & Prevention</h2>
+            <div class="solutions-grid">
+                <div class="solution-item" data-aos="fade-right">
+                    <h3>Infrastructure</h3>
+                    <ul>
+                        <li>Improved drainage systems</li>
+                        <li>Fire breaks and monitoring</li>
+                        <li>Slope stabilization</li>
+                        <li>Early warning systems</li>
+                        <li>Earthquake Detecting Alarm</li>
+                        <li>Disaster Warning Apps </li>    
+                 
+                        
+                    </ul>
+                </div>
+                <div class="solution-item" data-aos="fade-left">
+                    <h3>Community Action</h3>
+                    <ul>
+                        <li>Emergency response planning</li>
+                        <li>Forest management practices</li>
+                        <li>Public awareness programs</li>
+                        <li>Sustainable land use</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="take-action" class="take-action">
+        <div class="section-content">
+            <h2 data-aos="fade-up">Take Action Now</h2>
+            <div class="action-grid">
+                <a href="#" class="action-card" data-aos="fade-up">
+                    <h3>Learn More</h3>
+                    <p>Access educational resources about natural disasters</p>
+                </a>
+                <a href="#" class="action-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Get Involved</h3>
+                    <p>Join community initiatives and volunteer programs</p>
+                </a>
+                <a href="#" class="action-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Spread Awareness</h3>
+                    <p>Share information  and Disaster Survival Guide </p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@disastermanagement.org</p>
+                <p>Phone:  8813042587</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="#">Emergency Services</a>
+                <a href="#">Research Papers</a>
+                <a href="#">News Updates</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Disaster Management. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal containers -->
+    <div id="floodModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('floodModal')">&times;</span>
+            <h2>Understanding Floods</h2>
+            <div class="modal-body">
+                <h3>What are Floods?</h3>
+                <p>Floods are one of the most common and destructive natural disasters, occurring when water overflows onto normally dry land. They can happen anywhere in the world and can be caused by various factors including heavy rainfall, melting snow, or storm surges.</p>
+
+                <h3>Types of Floods</h3>
+                <p>• Flash Floods: Rapid flooding of low-lying areas within 6 hours of heavy rainfall
+                • River Floods: Occur when rivers overflow their banks
+                • Coastal Floods: Caused by storm surges and tsunamis
+                • Urban Floods: Result from poor drainage in developed areas
+                • Pluvial Floods: Direct flooding from rainfall before reaching streams</p>
+
+                <h3>Impact on Communities</h3>
+                <p>• Loss of life and property damage
+                • Displacement of communities
+                • Infrastructure destruction
+                • Water contamination
+                • Disease outbreaks
+                • Economic disruption
+                • Agricultural damage
+                • Environmental degradation</p>
+
+                <h3>Prevention and Safety Measures</h3>
+                <p>• Early warning systems
+                • Proper drainage infrastructure
+                • Flood barriers and levees
+                • Land-use planning
+                • Emergency response plans
+                • Flood insurance
+                • Community education
+                • Regular maintenance of water systems</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="droughtModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('droughtModal')">&times;</span>
+            <h2>Understanding Droughts</h2>
+            <div class="modal-body">
+                <h3>What are Droughts?</h3>
+                <p>Droughts are extended periods of unusually low rainfall, leading to water shortages and significant impacts on ecosystems and human activities. They can last for months or even years, causing severe environmental and economic consequences.</p>
+
+                <h3>Types of Droughts</h3>
+                <p>• Meteorological Drought: Below-normal precipitation
+                • Agricultural Drought: Insufficient soil moisture for crops
+                • Hydrological Drought: Reduced streamflow and groundwater
+                • Socioeconomic Drought: Water supply and demand imbalance
+                • Ecological Drought: Impact on natural ecosystems</p>
+
+                <h3>Global Impact</h3>
+                <p>• Food security threats
+                • Water scarcity
+                • Agricultural losses
+                • Economic disruption
+                • Ecosystem damage
+                • Population displacement
+                • Increased wildfire risk
+                • Social conflicts over water resources</p>
+
+                <h3>Mitigation Strategies</h3>
+                <p>• Water conservation practices
+                • Drought-resistant agriculture
+                • Improved irrigation systems
+                • Water recycling
+                • Groundwater management
+                • Climate change adaptation
+                • Public awareness campaigns
+                • Emergency water supply plans</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="tsunamiModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('tsunamiModal')">&times;</span>
+            <h2>Understanding Tsunamis</h2>
+            <div class="modal-body">
+                <h3>What are Tsunamis?</h3>
+                <p>Tsunamis are series of powerful ocean waves caused by sudden large-scale disturbances of the sea floor. These devastating waves can travel across entire oceans and cause catastrophic damage to coastal areas.</p>
+
+                <h3>Causes and Formation</h3>
+                <p>• Underwater earthquakes
+                • Volcanic eruptions
+                • Submarine landslides
+                • Meteorite impacts
+                • Underwater explosions
+                • Coastal rock falls</p>
+
+                <h3>Warning Signs</h3>
+                <p>• Sudden sea level changes
+                • Strong ground shaking
+                • Unusual ocean sounds
+                • Water receding unusually far
+                • Animals behaving strangely
+                • Official warnings and sirens</p>
+
+                <h3>Safety and Prevention</h3>
+                <p>• Early warning systems
+                • Evacuation plans
+                • Coastal zone management
+                • Public education
+                • Building codes for coastal structures
+                • Risk mapping
+                • Emergency response training
+                • International cooperation</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="landslideModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('landslideModal')">&times;</span>
+            <h2>Understanding Landslides</h2>
+            <div class="modal-body">
+                <h3>What are Landslides?</h3>
+                <p>Landslides are movements of rock, earth, or debris down a sloped section of land. They are caused by various factors including gravity, water, seismic activity, and human activities.</p>
+
+                <h3>Types of Landslides</h3>
+                <p>• Rockfalls: Sudden falling of rocks
+                • Debris flows: Fast-moving mixture of loose soil, rock, and water
+                • Mudflows: Liquid flows of mud
+                • Rotational slides: Curved surface ruptures
+                • Translational slides: Movement along a flat surface</p>
+
+                <h3>Triggering Factors</h3>
+                <p>• Heavy rainfall
+                • Earthquakes
+                • Volcanic activity
+                • Human activities (deforestation, mining)
+                • Slope modification
+                • Groundwater changes
+                • Soil erosion
+                • Freeze-thaw cycles</p>
+
+                <h3>Prevention and Mitigation</h3>
+                <p>• Slope stabilization
+                • Proper drainage systems
+                • Land-use planning
+                • Early warning systems
+                • Vegetation management
+                • Retaining walls
+                • Regular monitoring
+                • Public awareness</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="fireModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('fireModal')">&times;</span>
+            <h2>Understanding Forest Fires</h2>
+            <div class="modal-body">
+                <h3>What are Forest Fires?</h3>
+                <p>Forest fires, also known as wildfires, are uncontrolled fires that burn through vegetation in forests and other wildlands. They can spread rapidly and cause extensive damage to ecosystems and communities.</p>
+
+                <h3>Types and Causes</h3>
+                <p>• Natural causes (lightning, volcanic activity)
+                • Human-caused fires (accidents, arson)
+                • Crown fires (tree canopy)
+                • Surface fires (forest floor)
+                • Ground fires (underground organic matter)
+                • Interface fires (urban-wildland boundaries)</p>
+
+                <h3>Environmental Impact</h3>
+                <p>• Habitat destruction
+                • Air pollution
+                • Soil erosion
+                • Water quality degradation
+                • Carbon emissions
+                • Biodiversity loss
+                • Ecosystem disruption
+                • Climate change contribution</p>
+
+                <h3>Prevention and Control</h3>
+                <p>• Fire breaks and barriers
+                • Controlled burning
+                • Forest management
+                • Public education
+                • Early detection systems
+                • Rapid response teams
+                • Fire-resistant landscaping
+                • Community preparedness</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="src/main.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
